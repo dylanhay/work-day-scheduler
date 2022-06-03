@@ -30,11 +30,17 @@ textarea{
   border-radius: 15px;
 }
 
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
   display: flex;
+  margin-bottom: 1.5%;
 }
 
 .hour {
@@ -42,13 +48,26 @@ textarea{
   color: #000000;
   border: 5px solid #000000;
   flex: 1 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* .time-stamp {
+  margin-top: 10%;
+  margin-right: 10%;
+} */
 
 .custom-event {
   background-color: #ffffff;
   color: #000000;
   border: 5px solid #000000;
+  border-left: none;
   flex: 10 0 0;
+}
+
+.event-desc {
+  margin-left: 2%;
 }
 
 .past {
@@ -68,14 +87,19 @@ textarea{
 
 .saveBtn {
   border: 5px solid black;
+  border-left: none;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
   flex: 1 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+
 }
