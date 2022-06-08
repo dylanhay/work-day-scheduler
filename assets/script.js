@@ -13,4 +13,8 @@ const t1 = new Date().getHours();
 
 console.log(t1);
 
+let eventHour = document.getElementById("four");
+let eventHourQuant = eventHour.innerHTML
 
+console.log(eventHour);
+console.log(eventHourQuant);
