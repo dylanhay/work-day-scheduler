@@ -13,8 +13,45 @@ const t1 = new Date().getHours();
 
 console.log(t1);
 
-let eventHour = document.getElementById("four");
+let eventHour = document.getElementById("eight");
 let eventHourQuant = eventHour.innerHTML
 
-console.log(eventHour);
+let eventHourQuantNum = Number(eventHourQuant);
+
+
 console.log(eventHourQuant);
+// console.log(eventHourQuantNum);
+
+
+let t2=0;
+
+function twelveHrConvert () {
+
+    
+    if (eventHourQuant < 7) {
+        t2 = eventHourQuantNum + 12;
+    }
+    else if (eventHourQuantNum > 7) {
+        t2 = eventHourQuantNum;
+    }
+
+}
+
+twelveHrConvert();
+
+console.log(t2);
+
+
+function bgcolouring() {
+    if (t2 > t1) {
+        console.log('green');
+    }
+    else if (t2 < t1) {
+        console.log('grey');
+    }
+    else {
+        console.log ('red');
+    }
+}
+
+bgcolouring();
