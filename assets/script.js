@@ -1,3 +1,5 @@
+// display currrent date on webpage
+
 let dateDisplay = document.getElementById("currentDay");
 
 let today = new Date();
@@ -9,49 +11,65 @@ today = mm + "/" + dd + "/" + yyyy;
 
 dateDisplay.innerHTML = today;
 
-const t1 = new Date().getHours();
 
-console.log(t1);
+// define current hour as t1 var
+var t1 = new Date().getHours();
 
-let eventHour = document.getElementById("eight");
-let eventHourQuant = eventHour.innerHTML
-
-let eventHourQuantNum = Number(eventHourQuant);
+// generate array of time stamp blocks from HTML
+var array = $('.time-stamp').toArray();
 
 
-console.log(eventHourQuant);
-// console.log(eventHourQuantNum);
+// loop to determine and assign background colour for custom event divs
 
-
-let t2=0;
-
-function twelveHrConvert () {
-
+for (var i = 0; i < array.length; i++) {
     
-    if (eventHourQuant < 7) {
-        t2 = eventHourQuantNum + 12;
+var eventHourStr = array[i].innerHTML;
+var eventHourNum = Number(eventHourStr);
+
+var tb = 0;
+
+twelveHrConverter();
+
+
+// generate array of custom event div blocks from HTML
+var colourman = $('.custom-event').toArray();
+
+
+// background colour display function
+function backColouring() {
+    
+    if (tb > t1) {
+        colourman[i].style.backgroundColor = "#77dd77";
     }
-    else if (eventHourQuantNum > 7) {
-        t2 = eventHourQuantNum;
-    }
-
-}
-
-twelveHrConvert();
-
-console.log(t2);
-
-
-function bgcolouring() {
-    if (t2 > t1) {
-        console.log('green');
-    }
-    else if (t2 < t1) {
-        console.log('grey');
+    else if (tb < t1) {
+        colourman[i].style.backgroundColor = "#d3d3d3";
     }
     else {
-        console.log ('red');
+        colourman[i].style.backgroundColor = "#ff6961";
     }
+
 }
 
-bgcolouring();
+backColouring();
+
+}
+
+
+// 12 hour converter function
+function twelveHrConverter () {
+
+    
+    if (eventHourNum < 7) {
+        tb = eventHourNum + 12;
+    }
+    else if (eventHourNum > 7) {
+        tb = eventHourNum;
+    }
+
+}
+
+
+
+
+
+
