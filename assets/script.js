@@ -70,40 +70,42 @@ function twelveHrConverter () {
 
 
 
-var text = document.getElementById('cmon');
-var myData;
-var postData = window.localStorage.getItem("save");
-// var reset = text.innerHTML;
-// if no data
-if (postData == null || postData == '') {
-    myData = text.innerHTML;
-    // store default value
-    window.localStorage.setItem("save", myData);
-    // make it placeholder style
-    text.classList.remove('changed');
-} else {
-    // if there is a value post it
-    text.innerHTML = postData;
-    // make dark text
-    text.classList.add('changed');
+
+//array test
+var myArray = $('.saveBtn').toArray();
+
+
+console.log(myArray[0]);
+
+for (var i = 0; i < myArray.length; i++) {
+
+    var myDescArray = $('.event-desc').toArray();
+    var myData;
+    var postData = window.localStorage.getItem("save");
+    // if no data
+    if (postData == null || postData == '') {
+        myData = myDescArray[i].innerHTML;
+        // store default value
+        window.localStorage.setItem("save", myData);
+        // make it placeholder style
+        myDescArray[i].classList.remove('changed');
+    } else {
+        // if there is a value post it
+        myDescArray[i].innerHTML = postData;
+        // make dark text
+        myDescArray[i].classList.add('changed');
+    }
+    
+    function saveChanges() {
+        // store the current value
+        myData = myDescArray[i].innerHTML;
+        // local store the value
+        window.localStorage.setItem("save", myData);
+        text.classList.add('changed');
+    }
+
+
+
 }
 
-function saveChanges() {
-    // store the current value
-    myData = text.innerHTML;
-    // local store the value
-    window.localStorage.setItem("save", myData);
-    text.classList.add('changed');
-}
 
-
-
-
-// let saveBtn = document.querySelector('.saveBtn');
-
-// saveBtn.addEventListener('click', () => {
-
-//   if(content.contentEditable === 'false') {
-//   	localStorage.setItem('content', content.innerHTML);
-//   }
-// });
