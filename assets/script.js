@@ -68,12 +68,11 @@ function twelveHrConverter () {
 
 }
 
-
+//save buttons
 
 var text = document.getElementById('cmon');
 var myData;
 var postData = window.localStorage.getItem("save");
-// var reset = text.innerHTML;
 // if no data
 if (postData == null || postData == '') {
     myData = text.innerHTML;
@@ -99,11 +98,3 @@ function saveChanges() {
 
 
 
-// let saveBtn = document.querySelector('.saveBtn');
-
-// saveBtn.addEventListener('click', () => {
-
-//   if(content.contentEditable === 'false') {
-//   	localStorage.setItem('content', content.innerHTML);
-//   }
-// });
